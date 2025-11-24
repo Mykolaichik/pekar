@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio controls><!--додавання аудіо; controls - додає спеціальний інтерфейс для перемотування аудіо-->
+        <source src="./media/g-mn-ukra-ni-sche-ne-vmerla-ukra-na.mp3">
+    </audio>
+    <video controls loop autoplay><!--loop - зациклює відео; autoplay - автоматично вмикає-->
+        <source src="./media/istockphoto-1372812131-640_adpp_is.mp4" type="">
+    </video>
+    <table>
+        <thead> <!--заголов таблиці-->
+            <tr><!--1 рядок таблиці-->
+                <th>№</th><!--1 заголов таблиці-->
+                <th>Full Name</th><!--2 заголов таблиці-->
+                <th>Position</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><!--2 рядок таблиці-->
+                <td>1</td><!--tr*4>td*4-->
+                <td>Bill Gates</td>
+                <td>Founder Microsoft</td>
+                <td>1000$</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Steve Jobs</td>
+                <td>Founder Apple</td>
+                <td rowspan="2">1200$</td> <!--обєднання двох рядків-->
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry Page</td>
+                <td>Founder Google</td>
+                <!-- <td>1100$</td> -->
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Mark Zuckeberg</td>
+                <td>Founder Facebook</td>
+                <td>1300$</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>4000$</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20319.85069365694!2d30.324690341949466!3d50.4600722251993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc93ff7f23dd%3A0x90b1f649a6658e62!2z0JDQv9C10LvRjNGB0LjQvQ!5e0!3m2!1sru!2sua!4v1763988013944!5m2!1sru!2sua"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe><!--iframe дозволяє вставляти сайт в сай, тут вставлене посилання з гугл карт, обираємо карту-> вставлення карт; allowfullscreen="" - робить на весь екран-->
+    <iframe src="https://www.youtube.com/embed/C0DPdy98e4c" width="600" height="450" style="border:0;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe><!--iframe дозволяє вставляти сайт в сай, тут вставлене посилання з гугл карт, обираємо карту-> вставлення карт; allowfullscreen="" - робить на весь екран-->
+</body>
+
+</html>
