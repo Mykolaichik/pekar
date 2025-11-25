@@ -1,0 +1,17 @@
+/*РЕКОМЕНДУЄТЬСЯ ВСЕ РОБИТИ ЧЕРЕЗ class*/
+/* щоб h1 весь став таким як тут*/
+h1 {
+  border: 4px solid black;
+}
+/* щоб посилатись з class*/
+.main-title {
+  border: 4px solid violet;
+}
+/* щоб посилатись з id (id застосовують щоб посилатись з джава скріпт)*/
+#main-main-title {
+  border: 4px solid rgba(144, 130, 238, 0.249);
+}
+/*селектор атрибуту*/
+[type] {
+  border: 4px solid rgb(53, 198, 48);
+}
