@@ -15,3 +15,83 @@ h1 {
 [type] {
   border: 4px solid rgb(53, 198, 48);
 }
+
+.box {
+  width: 100px; /*ширина*/
+  height: 100px; /*висота*/
+  background-color: burlywood;
+  padding: 10px; /*відступ від контуру*/
+  border: 5px solid darkred; /*ширина. стиль(solid-суцільна dotter-пунктирна). колір*/
+  border-radius: 10px; /*заокруглення*/
+  margin: 10px; /*зовнійшній віступ*/
+}
+/* можна присвоювати лише одну якусь частину */
+.boxx {
+  width: 100px; /*ширина*/
+  height: 100px; /*висота*/
+  background-color: burlywood;
+  padding-top: 16px; /*відступ від контуру зверху*/
+  padding-right: 42px; /*відступ від контуру справа*/
+  padding-bottom: 16px; /*відступ від контуру знизу*/
+  padding-left: 42px; /*відступ від контуру зліва*/
+
+  border-bottom: 5px solid darkred; /*ширина. стиль(solid-суцільна dotter-пунктирна). колір*/
+  border-radius: 10px; /*заокруглення*/
+  margin-left: 10px; /*зовнійшній віступ*/
+}
+/* можна всі сторони присвоїти коротше РЕКОМЕНДУЄТЬСЯ*/
+.boxxx {
+  display: inline-block; /*розташування блоків лінійно-рядково*/
+  box-sizing: border-box;
+  width: 100px; /*ширина*/
+  height: 100px; /*висота*/
+  background-color: burlywood;
+  padding: 10px; /*ЯКЩО висота І ширина ОДНАКОВІ ТО ДОСИТЬ ПИСАТИ ДВА ЧИСЛА*/
+
+  border: 5px solid darkred; /*ширина. стиль(solid-суцільна dotter-пунктирна). колір*/
+  border-radius: 10px; /*заокруглення*/
+  margin: 10px; /*зовнійшній віступ звершу і знизу 0; справа знизу однакові*/
+}
+* {
+  box-sizing: border-box;
+}
+.flex-container {
+  display: flex;
+  justify-content: center; /*вирівнює по центру*/
+  flex-wrap: wrap; /*якщо потрібно, щоб елементи переносились на новий рядок*/
+}
+.item {
+  flex-basis: 100px; /*не жорстко привязана ширина*/
+  height: 100px; /*висота*/
+  background-color: burlywood;
+  padding: 10px; /*ЯКЩО висота І ширина ОДНАКОВІ ТО ДОСИТЬ ПИСАТИ ДВА ЧИСЛА*/
+
+  border: 5px solid darkred; /*ширина. стиль(solid-суцільна dotter-пунктирна). колір*/
+  border-radius: 10px; /*заокруглення*/
+  margin: 10px; /*зовнійшній віступ звершу і знизу 0; справа знизу однакові*/
+}
+.item:nth-child(2) {
+  /*другий номер*/
+  width: 50px;
+  height: 50px;
+}
+.item:nth-child(4) {
+  flex-grow: 1; /*елемент буде займати все вільне місце*/
+}
+.item:nth-child(6) {
+  flex-grow: 2; /*другий елемент буде в два рази більше ніж перший*/
+}
+.item:nth-child(7) {
+  flex-shrink: 0; /*елемент не буде стискатись більше заданого у порівнянні з іншими*/
+}
+.item:nth-child(3) {
+  order: 4; /*міняє елемент з 4*/
+  flex-basis: 50px;
+  height: 50px;
+  align-self: center; /*розташування елемента*/
+}
+.item:last-child {
+  /*останній номер*/
+  flex-basis: 80px;
+  height: 80px;
+}

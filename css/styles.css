@@ -6,6 +6,10 @@
   --color-brand-dark: #465929;
 }
 /*Глобальні стилі*/
+* {
+  /*виділяє всі елементи*/
+  box-sizing: border-box;
+}
 /*Застосовуємо до всіх написів*/
 body {
   color: var(--color-primary-dark);
@@ -13,20 +17,54 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5; /*висота рядка (відношення висоти рядка до висоти шрифта)*/
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+address {
+  font-style: normal;
 }
 /*прибирає з усіх маркованих списків маркери*/
 ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
+}
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.section {
+  padding: 48px 0;
+}
+.container {
+  width: 100%;
+  max-width: 1240px; /*максимальна ширина*/
+  margin: 0 auto;
 }
 /*Стилі для кнопок*/
 .button {
+  padding: 16px 32px;
   /*фон*/
   color: var(--color-primary-light);
   font-weight: 600;
   background-color: var(--color-brand-light); /*зостосовуємо змінну*/
   border: 2px solid var(--color-brand-light);
   border-radius: 8px;
-  /*змінна курсова*/
+  /*змінна курсора*/
   cursor: pointer;
 }
 /*кнопка робиться прозорою коли наводять мишку*/
@@ -53,7 +91,31 @@ ul {
   font-weight: 600;
 }
 /*Стилі на головний напис*/
+.header {
+  background-color: lightgray;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /*Займає все вільне місце*/
+  gap: 40px;
+}
+.header-menu {
+  display: flex;
+  gap: 64px; /*додає відстань між елементами, так, що не потрібно додавати відстань вкінці*/
+  flex-grow: 1;
+  justify-content: center;
+}
+.hero-section {
+  padding: 272px 0;
+}
 .hero-title {
+  margin-bottom: 0;
   color: var(--color-primary-light);
   text-decoration: underline; /*Підкреслення тексту*/
   text-align: center; /*Вирівнювання тексту*/
@@ -69,19 +131,39 @@ ul {
   color: var(--color-brand-light);
 }
 /*Стилі для переваг*/
-.advantages-list {
-  color: var(--color-primary-light);
+.advantages-section {
   background-color: var(--color-brand-light);
+  padding: 16px 0;
+}
+.advantages-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 .advantages-item {
+  color: var(--color-primary-light);
   font-size: 20px;
   font-weight: 300;
 }
 /*Стилі для заголовків*/
+.section-tiltle {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
 .section-tiltle .accent {
   color: var(--color-brand-dark);
 }
-
+.traditions-section {
+  padding-top: 96px;
+}
+.traditions-container {
+  display: flex; /*Розташовуємо в рядок*/
+}
+.traditions-tiltle {
+  margin-bottom: 42px;
+}
 /* traditions-text 
 .traditions-text {
    white-space: nowrap;контролює як буде відображатись текст якщо він не вміщується в один рядок тут не переноситься
@@ -92,6 +174,44 @@ ul {
   font-weight: 600;
 }
 .traditions-text .uppercase {
-  color: var(--color-brand-light);
   text-transform: uppercase; /* Виводить весь текс у верхній регістр */
+}
+/* chef-title */
+.chefs-title {
+  margin-bottom: 80px;
+}
+.chef-title {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 600;
+}
+/* формат секції */
+.formats-title {
+  margin-bottom: 80px;
+}
+.format-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.format-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+/* Contact section */
+.contact-tiltle {
+  margin-bottom: 16px;
+}
+/* Footer */
+.address-link {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--color-primary-light);
+  text-decoration: none; /* прибирає підкреслення */
+}
+
+.address-link:hover {
+  color: var(--color-primary-dark);
+}
+.address-copyright {
+  font-size: 14px;
 }
