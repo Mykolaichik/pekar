@@ -113,6 +113,10 @@ ul {
 }
 .hero-section {
   padding: 272px 0;
+  background-image: url("../images/couple-in-bakery.jpg");/*задає фон (можна колір background-color, фото - background-image: url("../images/couple-in-bakery.jpg"))*/
+  background-repeat: no-repeat; /*щоб зображення не повторювалось*/
+  background-position: center;/*зміщення фону*/
+  background-size: cover;
 }
 .hero-title {
   margin-bottom: 0;
@@ -160,6 +164,11 @@ ul {
 }
 .traditions-container {
   display: flex; /*Розташовуємо в рядок*/
+  justify-content: space-between;
+  gap: 40px;
+}
+.traditions-content{
+  max-width: 710px;
 }
 .traditions-tiltle {
   margin-bottom: 42px;
@@ -176,6 +185,9 @@ ul {
 .traditions-text .uppercase {
   text-transform: uppercase; /* Виводить весь текс у верхній регістр */
 }
+.traditions-text.limited{
+  max-width: 340px;
+}
 /* chef-title */
 .chefs-title {
   margin-bottom: 80px;
@@ -186,6 +198,19 @@ ul {
   font-weight: 600;
 }
 /* формат секції */
+.format-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.format-item{
+  flex-basis: calc((100%-40px) / 3);/* щоб усі фігури були поділени на 3 рівні частини і відняти відступи (40 пікселів)*/
+}
+.format-card{
+  padding: 24px;
+  border: 1px solid lightgray;
+  border-radius: 16px;
+}
 .formats-title {
   margin-bottom: 80px;
 }
