@@ -2,8 +2,10 @@
 :root {
   --color-primary-dark: #31261a;
   --color-primary-light: #faf4ea;
-  --color-brand-light: #819b57;
+  --color-secondart-dark: #a28268;
+  --color-brand-normal: #819b57;
   --color-brand-dark: #465929;
+  --color-brand-light: #cfcfbc;
 }
 /*Глобальні стилі*/
 * {
@@ -13,6 +15,7 @@
 /*Застосовуємо до всіх написів*/
 body {
   color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
   font-family: "Poppins", sans-serif; /*підключення шрифта (Poppins - сімейство шрифта, sans-serif - його тип)*/
   font-size: 18px;
   font-weight: 400;
@@ -61,8 +64,8 @@ ul {
   /*фон*/
   color: var(--color-primary-light);
   font-weight: 600;
-  background-color: var(--color-brand-light); /*зостосовуємо змінну*/
-  border: 2px solid var(--color-brand-light);
+  background-color: var(--color-brand-normal); /*зостосовуємо змінну*/
+  border: 2px solid var(--color-brand-normal);
   border-radius: 8px;
   /*змінна курсора*/
   cursor: pointer;
@@ -87,7 +90,7 @@ ul {
 }
 /*посилання робиться зеленим коли на нього наводиться курсор*/
 .link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   font-weight: 600;
 }
 /*Стилі на головний напис*/
@@ -113,10 +116,11 @@ ul {
 }
 .hero-section {
   padding: 272px 0;
-  background-image: url("../images/couple-in-bakery.jpg");/*задає фон (можна колір background-color, фото - background-image: url("../images/couple-in-bakery.jpg"))*/
+  background-image: url("../images/hero-section-background.jpg"); /*задає фон (можна колір background-color, фото - background-image: url("../images/couple-in-bakery.jpg"))*/
   background-repeat: no-repeat; /*щоб зображення не повторювалось*/
-  background-position: center;/*зміщення фону*/
+  background-position: center; /*зміщення фону*/
   background-size: cover;
+  background-attachment: fixed; /*фон буде залишатись при прокрутці*/
 }
 .hero-title {
   margin-bottom: 0;
@@ -132,11 +136,11 @@ ul {
 }
 
 .hero-title .accent {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 /*Стилі для переваг*/
 .advantages-section {
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand-normal);
   padding: 16px 0;
 }
 .advantages-list {
@@ -150,13 +154,16 @@ ul {
   font-weight: 300;
 }
 /*Стилі для заголовків*/
-.section-tiltle {
+.section-title {
   font-size: 64px;
   font-weight: 900;
   line-height: 1.3;
 }
+.section-title.centered {
+  text-align: center;
+}
 
-.section-tiltle .accent {
+.section-title .accent {
   color: var(--color-brand-dark);
 }
 .traditions-section {
@@ -167,10 +174,10 @@ ul {
   justify-content: space-between;
   gap: 40px;
 }
-.traditions-content{
+.traditions-content {
   max-width: 710px;
 }
-.traditions-tiltle {
+.traditions-title {
   margin-bottom: 42px;
 }
 /* traditions-text 
@@ -179,18 +186,43 @@ ul {
  } */
 
 .traditions-text .brand {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   font-weight: 600;
 }
 .traditions-text .uppercase {
   text-transform: uppercase; /* Виводить весь текс у верхній регістр */
 }
-.traditions-text.limited{
+.traditions-text.limited {
   max-width: 340px;
 }
-/* chef-title */
+/* chef-section */
 .chefs-title {
-  margin-bottom: 80px;
+  max-width: 540px;
+  margin: 0 auto 80px;
+}
+.chefs-title::before,
+.chefs-title::after {
+  /* псевдоелемент - використовується лише для декоративного оформлення/ за замовчуванням це рядок*/
+  display: block;
+  width: 352px;
+  border: 2px solid var(--color-brand-light);
+  content: ""; /* обовязково потрібно, щоб робити псевдоелементи*/
+}
+.chefs-list {
+  display: flex;
+  gap: 30px;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+.chef-photo {
+  border-radius: 4px 4px 4px 200px; /*заокруглення фото*/
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 2px var(--color-secondart-dark);
 }
 .chef-title {
   margin-bottom: 16px;
@@ -198,16 +230,30 @@ ul {
   font-weight: 600;
 }
 /* формат секції */
-.format-list{
+.formats-container {
+  display: flex;
+  align-items: center; /* вирівнює елемент по центру*/
+  gap: 32px;
+}
+.formats-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-.format-item{
-  flex-basis: calc((100%-40px) / 3);/* щоб усі фігури були поділени на 3 рівні частини і відняти відступи (40 пікселів)*/
+.formats-item {
+  flex-basis: calc(
+    (100% - 40px) / 3
+  ); /* щоб усі фігури були поділени на 3 рівні частини і відняти відступи (40 пікселів)*/
 }
-.format-card{
+.format-card {
+  height: 444px;
   padding: 24px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    var(--color-primary-dark) 100%
+  ); /*додавання заднього фону*/
   border: 1px solid lightgray;
   border-radius: 16px;
 }
@@ -222,9 +268,38 @@ ul {
   font-size: 14px;
   font-weight: 300;
 }
+/*Carousel*/
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /*елемент стає нестискаємим*/
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  fill: var(--color-primary-dark);
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+  fill: var(--color-primary-light);
+}
 /* Contact section */
-.contact-tiltle {
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+.contact-title {
   margin-bottom: 16px;
+}
+.contact-map {
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: none;
 }
 /* Footer */
 .address-link {
@@ -237,6 +312,24 @@ ul {
 .address-link:hover {
   color: var(--color-primary-dark);
 }
+.address-icon {
+  fill: var(
+    --color-primary-light
+  ); /*для іконок потрібна спеціальна властивість */
+}
+.address-icon:hover {
+  fill: var(
+    --color-brand-normal
+  ); /*для іконок потрібна спеціальна властивість */
+  stroke: red; /*додає обводку до іконки*/
+}
 .address-copyright {
   font-size: 14px;
+}
+.footer {
+  background-image: url("../images/footer-background.png"); /* потрібно у форматі png так буде прозорою, щоб можна було задавати колір фону */
+  background-color: var(--color-primary-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
