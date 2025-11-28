@@ -8,7 +8,9 @@
   --color-brand-light: #cfcfbc;
 }
 /*Глобальні стилі*/
-* {
+*,
+::after,
+::before {
   /*виділяє всі елементи*/
   box-sizing: border-box;
 }
@@ -31,6 +33,10 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block; /*всі посилання стають блоковими*/
 }
 
 address {
@@ -197,20 +203,30 @@ ul {
 }
 /* chef-section */
 .chefs-title {
-  max-width: 540px;
+  position: relative;
   margin: 0 auto 80px;
 }
 .chefs-title::before,
 .chefs-title::after {
   /* псевдоелемент - використовується лише для декоративного оформлення/ за замовчуванням це рядок*/
+  position: absolute; /*якщо додаємо position: absolute то рядкові елементи стають блоковими*/
+  bottom: 24px;
   display: block;
   width: 352px;
   border: 2px solid var(--color-brand-light);
-  content: ""; /* обовязково потрібно, щоб робити псевдоелементи*/
+  content: "";
+  /* обовязково потрібно, щоб робити псевдоелементи*/
+}
+.chefs-title::before {
+  left: 0;
+}
+.chefs-title::after {
+  right: 0;
 }
 .chefs-list {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap; /*щоб елемент не розтягувався, а переносився на наступний рядок*/
+  gap: 40px 30px;
 }
 .chefs-item {
   flex-basis: calc((100% - 30px) / 2);
@@ -228,6 +244,13 @@ ul {
   margin-bottom: 16px;
   font-size: 40px;
   font-weight: 600;
+}
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text p:not(:last-child) {
+  /*до всіх елементів крім останнього*/
+  margin-bottom: 24px;
 }
 /* формат секції */
 .formats-container {
@@ -289,7 +312,7 @@ ul {
   fill: var(--color-primary-light);
 }
 /* Contact section */
-.contact-section{
+.contact-section {
   padding-bottom: 96px;
 }
 .contact-container {
@@ -305,14 +328,51 @@ ul {
   border: none;
 }
 /* Footer */
-.footer-container{
+.footer {
+  padding: 32px 0;
+  position: relative;
+  background-image: url("../images/footer-background.png"); /* потрібно у форматі png так буде прозорою, щоб можна було задавати колір фону */
+  background-color: var(--color-primary-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.footer::before,
+footer::after {
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  content: "";
+}
+.footer::before {
+  width: 180px;
+  height: 120px;
+  left: 0;
+  background-image: url("../images/decor-bread-small.png");
+}
+.footer::after {
+  width: 380px;
+  height: 190px;
+  right: 0;
+  background-image: url("../images/decor-bread-large.png");
+}
+.footer-container {
   display: flex;
+  gap: 20px;
 }
-.footer-nav{
+.footer-nav,
+.footer-address {
+  display: flex;
   flex-basis: 50%;
+  gap: 20px;
 }
-.footer-address{
-  flex-basis: 50%;
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+.address-list,
+.address-info {
+  flex-grow: 1;
 }
 .address-link {
   font-size: 16px;
@@ -338,10 +398,33 @@ ul {
 .address-copyright {
   font-size: 14px;
 }
-.footer {
-  background-image: url("../images/footer-background.png"); /* потрібно у форматі png так буде прозорою, щоб можна було задавати колір фону */
-  background-color: var(--color-primary-dark);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+/* Modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  width: 880px;
+  height: 880px;
+  background-color: var(--color-primary-light);
+  border-radius: 32px;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }

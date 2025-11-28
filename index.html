@@ -42,7 +42,7 @@
                         </li>
                     </ul>
                 </nav>
-                <button class="button" type="button" disabled>
+                <button class="button modal-btn-open" type="button">
                     Замовити дзвінок
                 </button>
             </div>
@@ -92,7 +92,8 @@
         </section>
         <section class="section" id="chefs-section">
             <div class="container">
-                <h2 class="chefs-title section-title centered"> Наші найкращі <span class="accent"> шеф-кухарі</span>
+                <h2 class="chefs-title section-title centered"> Наші найкращі <br /> <span class="accent">
+                        шеф-кухарі</span>
                 </h2>
                 <ul class="chefs-list">
                     <li class="chefs-item">
@@ -100,9 +101,13 @@
                             <img class="chef-photo" src="./images/nastya-chef.jpg" alt="Nastya-chef">
                             <div>
                                 <h3 class="chef-title">Настя</h3>
-                                <p class="chef-text">Привіт, я Настя!</p>
-                                <p class="chef-text">Вже 10 років, я втілюю <br> у життя цікаві та смачні ідеї.</p>
-                                <p class="chef-text">Я випічу для вас <br> найсмачніші вироби!</p>
+
+                                <div class="chef-text">
+                                    <p class="chef-text">Привіт, я Настя!</p>
+                                    <p class="chef-text">Вже 10 років, я втілюю <br> у життя цікаві та смачні ідеї.</p>
+                                    <p class="chef-text">Я випічу для вас <br> найсмачніші вироби!</p>
+                                </div>
+
                             </div>
                         </article>
                     </li>
@@ -200,56 +205,66 @@
     </main>
     <footer class="footer">
         <div class="container">
-            <div class="footer-container">          
-            <nav class="footer-nav">
-                <!-- Ctrl+/ - швидкий коментар -->
-                <!-- logo-->
-                <a href="#"><img src="./images/logo.svg" alt="Логотип сучасної пекарні" /></a>
-                <ul>
-                    <li><a class="link" href="#">Наші традиції</a></li>
-                    <!--a - посилання-->
-                    <li><a class="link" href="#">шеф-кухарі</a></li>
-                    <li><a class="link" href="#">Формати</a></li>
-                    <li><a class="link" href="#">Контанки</a></li>
-                </ul>
-            </nav>
-            <address class="footer-address">
-                <ul>
-                    <li>
-                        <a class="address-link" href="tel:+380960000007">+ 38 (096) 000 00 07</a>
-                    </li>
-                    <li>
-                        <a class="address-link" href="mailto:shopbakery@gmail.com">shopbakery@gmail.com</a>
-                    </li>
-                    <li>
-                        <a class="address-link" href="https://maps.app.goo.gl/rxG9VUnU2pF3oyao6"
-                            target="_blank">Україна, м. Київ, вул. Січових Стрільців 54</a>
-                        <!--target="_blank" - відкриває у новій вкладці-->
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="address-icon" width="32"
-                                height="32"><!--щоб створити іконки потрібно зайти на сайт icomoon і там завантажити файли і отримаємо папку в ній обрати symbols def.svg і перетягти собі-->
-                                <use href="./images/icons.svg#icon-instagram"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg class="address-icon" width="32"
-                                height="32"><!--щоб створити іконки потрібно зайти на сайт icomoon і там завантажити файли і отримаємо папку в ній обрати symbols def.svg і перетягти собі-->
-                                <use href="./images/icons.svg#icon-facebook"></use>
-                            </svg>
-                    </li>
-                </ul>
-                <div class="address-info">
-                <a class="address-link" href="_blank">Політика конфіденційності</a>
-                <p class="address-copyright">&lt;&COPY;&gt; 2025 Дані захищені</p>
-            </div>
-            </address>
+            <div class="footer-container">
+                <nav class="footer-nav">
+                    <!-- Ctrl+/ - швидкий коментар -->
+                    <!-- logo-->
+                    <div class="footer-logo">
+                        <a href="#"><img src="./images/logo.svg" alt="Логотип сучасної пекарні" /></a>
+                    </div>
+                    <ul class="footer-menu">
+                        <li><a class="link" href="#">Наші традиції</a></li>
+                        <!--a - посилання-->
+                        <li><a class="link" href="#">шеф-кухарі</a></li>
+                        <li><a class="link" href="#">Формати</a></li>
+                        <li><a class="link" href="#">Контанки</a></li>
+                    </ul>
+                </nav>
+                <address class="footer-address">
+                    <ul class="address-list">
+                        <li>
+                            <a class="address-link" href="tel:+380960000007">+ 38 (096) 000 00 07</a>
+                        </li>
+                        <li>
+                            <a class="address-link" href="mailto:shopbakery@gmail.com">shopbakery@gmail.com</a>
+                        </li>
+                        <li>
+                            <a class="address-link" href="https://maps.app.goo.gl/rxG9VUnU2pF3oyao6"
+                                target="_blank">Україна, м. Київ, вул. Січових Стрільців 54</a>
+                            <!--target="_blank" - відкриває у новій вкладці-->
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="address-icon" width="32"
+                                    height="32"><!--щоб створити іконки потрібно зайти на сайт icomoon і там завантажити файли і отримаємо папку в ній обрати symbols def.svg і перетягти собі-->
+                                    <use href="./images/icons.svg#icon-instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="address-icon" width="32"
+                                    height="32"><!--щоб створити іконки потрібно зайти на сайт icomoon і там завантажити файли і отримаємо папку в ній обрати symbols def.svg і перетягти собі-->
+                                    <use href="./images/icons.svg#icon-facebook"></use>
+                                </svg>
+                        </li>
+                    </ul>
+                    <div class="address-info">
+                        <a class="address-link" href="_blank">Політика конфіденційності</a>
+                        <p class="address-copyright">&lt;&COPY;&gt; 2025 Дані захищені</p>
+                    </div>
+                </address>
             </div>
         </div>
     </footer>
+    <!-- браузер все завантажує послідовно, тому потрібно спочатку основне тіло, потім додаткове (модальне вікно)-->
+    <div class="backdrop">
+        <div class="modal">
+            <button class="modal-btn-close" type="button">Close</button>
+        </div>
+    </div>
+    <!-- Всі скріпти підключаються в кінці body -->
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

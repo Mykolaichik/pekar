@@ -146,3 +146,91 @@ h1 {
   ); /*переливання градієнту у радіусі*/
   box-shadow: 2px 2px 4px 4px rgb(226, 119, 119), 4px 4px 8px 8px gold; /*додавання тіні(зміщення по осі x, зміщення по осі y, розмитість, розпилення, колір/ можна робити багатофарову тінь подвоївши)*/
 }
+.parent {
+  padding: 30px;
+  border: 1px dotted black; /*рамка*/
+}
+
+.items.red {
+  position: static; /*значення за замовчуванням*/
+  width: 150px;
+  height: 150px; /*висота*/
+  background-color: red;
+  color: white;
+  overflow: auto; /*дозволяє скролити сторінку, якщо мало місця в блоці, якщо мало тексту то бігунок не показується*/
+}
+.items.red1 {
+  position: static; /*значення за замовчуванням*/
+  width: 150px;
+  height: 150px; /*висота*/
+  background-color: red;
+  color: white;
+  overflow: scroll; /*дозволяє скролити сторінку, якщо мало місця в блоці, будь якому разі показує повзунок*/
+}
+.items.green {
+  position: absolute; /*абсолютне позиціонування*/
+  opacity: 0.5;
+  width: 50px;
+  height: 50px; /*висота*/
+  background-color: green;
+  z-index: 2; /*виводить елемент на позицію по осі z чим більше число тим ближче до нас*/
+}
+.items.blue {
+  width: 50px;
+  height: 50px; /*висота*/
+  background-color: blue;
+  position: fixed; /*фіксоване позиціонування - якщо скролити то елемент всерівно буде привязаний до екрана*/
+  bottom: 20px;
+  right: 20px;
+}
+.items.yellow {
+  width: 50px;
+  height: 50px; /*висота*/
+  background-color: yellow;
+  position: -webkit-sticky; /*плаваюче позиціонування - якщо скролити то елемент буде залишатись на місці в межах div*/
+  position: sticky;
+  padding: 50px;
+  font-size: 30px;
+  bottom: 20px;
+  right: 20px;
+}
+.section-title {
+  background-color: burlywood;
+  position: sticky;
+  top: 0; /*щоб елемент був прикріплений саме до верхнього елемента*/
+}
+.parent1 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  border: 1px dotted black;
+}
+.itemsss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.itemsss.red1 {
+  width: 150px;
+  height: 150px; /*висота*/
+  background-color: red;
+  transform: translate(10px, 50px); /*дозволяє зміщувати елемент по осі Х ТА У*/
+}
+.itemsss.green1 {
+  width: 100px;
+  height: 100px; /*висота*/
+  background-color: green;
+  transform: rotate(90deg); /*повертає елемент на кут*/
+}
+.itemsss.blue1 {
+  width: 50px;
+  height: 50px; /*висота*/
+  background-color: blue;
+}
+.itemsss.orange1 {
+  width: 150px;
+  height: 150px; /*висота*/
+  background-color: orange;
+}
