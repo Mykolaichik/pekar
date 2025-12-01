@@ -217,20 +217,72 @@ h1 {
   height: 150px; /*висота*/
   background-color: red;
   transform: translate(10px, 50px); /*дозволяє зміщувати елемент по осі Х ТА У*/
+  transition-property: background-color; /*яку властивість хочемо анімувати*/
+  transition-duration: 2s; /*за скільки ми хочемо анімувати*/
+  transition-timing-function: cubic-bezier(
+    0.29,
+    1,
+    1,
+    -0.6
+  ); /*нелінійна зміна, можна зайти на сайт cubic-bezier і подивитись як буде змінюватись*/
+  transition-delay: 0.5s;
+  opacity: 1;
+  transition: background-color 1s, color 1s, transform 1s;
+}
+.itemsss.red1:hover {
+  /*зміна кольору елемента*/
+  background-color: pink;
+  opacity: 0;
+  color: black;
 }
 .itemsss.green1 {
   width: 100px;
   height: 100px; /*висота*/
   background-color: green;
   transform: rotate(90deg); /*повертає елемент на кут*/
+  transition-property: background-color; /*яку властивість хочемо анімувати*/
+  transition-duration: 2s; /*за скільки ми хочемо анімувати*/
+  animation-name: spin; /*підтягує @keyframes spin*/
+  animation-duration: 2s; /*за який час хочемо зробити перехід*/
+  animation-delay: 2s; /*затримка перед початком анімації*/
+  animation-iteration-count: infinite; /*якщо хочемо, щоб анімація повторювалась певну кількість разів; infinite - це безкінечність*/
+  animation-timing-function: linear; /*дозволяє робити плавний (лінійний) перехід*/
+}
+.itemsss.green1:hover {
+  animation-play-state: paused; /*робить паузу коли наводиться мишка на елемент*/
+}
+@keyframes spin {
+  /*директива за допомогою якої робиться анімація(обертання)*/
+  0% {
+    transform: rotate(0); /*задаємо обертання з 0*/
+    background-color: green; /*можна анмувати будь яку властивість*/
+  }
+  50% {
+    transform: rotate(
+      10deg
+    ); /*задаємо обертання на половині часу з 0 до 10 градусів*/
+    background-color: red;
+  }
+  100% {
+    transform: rotate(360deg); /*задаємо обертання до 360*/
+    background-color: green;
+  }
+}
+.itemsss.green1:hover {
+  /*зміна кольору елемента*/
+  background-color: pink;
 }
 .itemsss.blue1 {
   width: 50px;
   height: 50px; /*висота*/
   background-color: blue;
+  transform: scale(
+    1.5
+  ); /*збільшує елемент у пропорціях, елемент буде залазити на інший*/
 }
 .itemsss.orange1 {
   width: 150px;
   height: 150px; /*висота*/
   background-color: orange;
+  transform: skew(20deg); /*викривля елемент*/
 }

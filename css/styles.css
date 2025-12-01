@@ -89,10 +89,17 @@ ul {
 .button:active {
   background-color: rgb(239, 110, 11);
 }
+.button[disabled] {
+  color: var(--color-brand-light);
+  background-color: lightgray;
+  border-color: currentColor;
+  cursor: not-allowed; /*змінює курсор на знак заборони*/
+}
 /*Стилі для посилання*/
 .link {
   color: var(--color-primary-light);
   text-decoration: none;
+  transition: color o.3s;
 }
 /*посилання робиться зеленим коли на нього наводиться курсор*/
 .link:hover {
@@ -101,7 +108,11 @@ ul {
 }
 /*Стилі на головний напис*/
 .header {
-  background-color: lightgray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
 }
 .header-container {
   display: flex;
@@ -122,7 +133,13 @@ ul {
 }
 .hero-section {
   padding: 272px 0;
-  background-image: url("../images/hero-section-background.jpg"); /*задає фон (можна колір background-color, фото - background-image: url("../images/couple-in-bakery.jpg"))*/
+  background-image: linear-gradient(
+      102.76deg,
+      rgba(18, 18, 17, 0.78) 2.03%,
+      rgba(18, 18, 17, 0.6) 58.46%,
+      rgba(18, 18, 17, 0) 90.36%
+    ),
+    url("../images/hero-section-background.jpg"); /*задає фон (можна колір background-color, фото - background-image: url("../images/couple-in-bakery.jpg"))*/
   background-repeat: no-repeat; /*щоб зображення не повторювалось*/
   background-position: center; /*зміщення фону*/
   background-size: cover;
@@ -279,6 +296,10 @@ ul {
   ); /*додавання заднього фону*/
   border: 1px solid lightgray;
   border-radius: 16px;
+  transition: transform 0.3s;
+}
+.format-card:hover {
+  transform: scale(1.1); /*трохи збільшує елемент, якщо на нього навести мишку*/
 }
 .formats-title {
   margin-bottom: 80px;
@@ -310,6 +331,9 @@ ul {
 .carousel-button:hover {
   background-color: var(--color-primary-dark);
   fill: var(--color-primary-light);
+}
+.carousel-button.next {
+  transform: rotate(180deg);
 }
 /* Contact section */
 .contact-section {
@@ -408,7 +432,9 @@ footer::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 1.3s, visibility 1.3s; /* плавно з'являється і зникає вікно, не всі властивості є анімованими */
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -417,8 +443,11 @@ footer::after {
 }
 .modal {
   position: relative;
-  width: 880px;
-  height: 880px;
+  width: 100%;
+  max-width: 880px;
+  height: 100%;
+  max-height: 880px;
+  padding: 128px;
   background-color: var(--color-primary-light);
   border-radius: 32px;
 }
@@ -427,4 +456,55 @@ footer::after {
   position: absolute;
   top: 40px;
   right: 40px;
+}
+/* form */
+.form-field {
+  position: relative;
+  margin-bottom: 32px;
+}
+.form-label {
+  position: absolute;
+  top: 16px;
+  left: 42px;
+}
+
+.form-input {
+  padding: 16px 42px;
+  width: 100%;
+  font-style: 16px;
+  line-height: 1.17;
+  border: 1px solid var(--color-secondart-dark);
+  border-radius: 8px;
+  background-color: transparent;
+}
+.form-input:focus {
+  border-color: var(--color-brand-normal);
+  outline: none;
+}
+.form-input:disabled {
+  border-color: lightgray;
+}
+.form-input:disabled::placeholder {
+  color: lightgray;
+}
+.form-input:focus:placeholder {
+  color: var(--color-primary-dark);
+}
+.form-input::placeholder {
+  color: var(--color-secondart-dark);
+  font-style: 16px;
+  line-height: 1.17;
+}
+.form-terms {
+  margin: 0 auto;
+  max-width: 220px;
+  max-width: 210px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.form-terms-link {
+  color: var(--color-primary-dark);
+  text-underline-offset: 2px;
 }
