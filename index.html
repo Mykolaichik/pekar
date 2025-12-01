@@ -286,9 +286,7 @@
             <form name="modal-form" autocomplete="off">
                 <div class="form-field ">
                     <label class="form-label visually-hidden" for="user-name">Ім'я</label>
-                    <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ім'я"
-                        minlength="2" maxlength="20"
-                        required><!--required -робить поле обов'язковим для заповнення minlength, maxlength - мінімальне та максимальне обмеження на кількість символів-->
+                    <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ім'я" required><!--required -робить поле обов'язковим для заповнення minlength, maxlength - мінімальне та максимальне обмеження на кількість символів-->
                 </div>
                 <div class="form-field">
                     <label class="form-label visually-hidden" for="user-tel">Телефон</label>
@@ -297,10 +295,23 @@
                 </div>
                 <div class="form-field">
                     <label class="form-label visually-hidden" for="user-email">Електронна пошта</label>
-                    <input class="form-input" type="email" name="user-email" id="user-email"
-                        placeholder="Електронна пошта">
+                    <input 
+                    class="form-input" 
+                    type="email" 
+                    name="user-email" 
+                    id="user-email"  
+                     placeholder="Електронна пошта"
+                     />
                 </div>
-
+                <!-- <div class="checkbox">
+                <input 
+                class="checkbox-input visually-hidden" 
+                type="checkbox" 
+                id="terms-condition" 
+                name="terms-condition"
+                />
+                <label class="checkbox-label" for="terms-condition">Я точно погоджуюсь з політикою конфіденційності</label> <!- робить квадратик з галочкою ->
+</div> -->
                 <button class="form-button button" type="submit">Замовити
                     дзвінок</button><!-- disabled - забороняє відправку поки не введено всі поля -->
                 <p class="form-terms">Натискаючи на кнопку я погоджуюсь з <a class="form-terms-link" href="#">політикою
