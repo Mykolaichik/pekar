@@ -1,0 +1,10 @@
+/*Стилі для посилання*/
+.link {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+/*посилання робиться зеленим коли на нього наводиться курсор*/
+.link:hover {
+  color: var(--color-brand-normal);
+}

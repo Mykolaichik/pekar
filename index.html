@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet" />
     <!--додавання шрифта з Google font-->
     <!-- форма для шрифта -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./scss/main.css" />
     <!--підвязка css-->
 </head>
 
@@ -286,7 +286,8 @@
             <form name="modal-form" autocomplete="off">
                 <div class="form-field ">
                     <label class="form-label visually-hidden" for="user-name">Ім'я</label>
-                    <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ім'я" required><!--required -робить поле обов'язковим для заповнення minlength, maxlength - мінімальне та максимальне обмеження на кількість символів-->
+                    <input class="form-input" type="text" name="user-name" id="user-name" placeholder="Ім'я"
+                        required><!--required -робить поле обов'язковим для заповнення minlength, maxlength - мінімальне та максимальне обмеження на кількість символів-->
                 </div>
                 <div class="form-field">
                     <label class="form-label visually-hidden" for="user-tel">Телефон</label>
@@ -295,13 +296,8 @@
                 </div>
                 <div class="form-field">
                     <label class="form-label visually-hidden" for="user-email">Електронна пошта</label>
-                    <input 
-                    class="form-input" 
-                    type="email" 
-                    name="user-email" 
-                    id="user-email"  
-                     placeholder="Електронна пошта"
-                     />
+                    <input class="form-input" type="email" name="user-email" id="user-email"
+                        placeholder="Електронна пошта" />
                 </div>
                 <!-- <div class="checkbox">
                 <input 

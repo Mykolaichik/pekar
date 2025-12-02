@@ -1,0 +1,40 @@
+*,
+::after,
+::before {
+  /*виділяє всі елементи*/
+  box-sizing: border-box;
+}
+/*Застосовуємо до всіх написів*/
+body {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+  font-family: "Poppins", sans-serif; /*підключення шрифта (Poppins - сімейство шрифта, sans-serif - його тип)*/
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5; /*висота рядка (відношення висоти рядка до висоти шрифта)*/
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+a {
+  display: inline-block; /*всі посилання стають блоковими*/
+}
+
+address {
+  font-style: normal;
+}
+/*прибирає з усіх маркованих списків маркери*/
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

@@ -1,61 +1,12 @@
-/*:root - застосовується для створення змінниз*/
-:root {
-  --color-primary-dark: #31261a;
-  --color-primary-light: #faf4ea;
-  --color-secondart-dark: #a28268;
-  --color-brand-normal: #819b57;
-  --color-brand-dark: #465929;
-  --color-brand-light: #cfcfbc;
-}
-/*Глобальні стилі*/
-*,
-::after,
-::before {
-  /*виділяє всі елементи*/
-  box-sizing: border-box;
-}
-/*Застосовуємо до всіх написів*/
-body {
-  color: var(--color-primary-dark);
-  background-color: var(--color-primary-light);
-  font-family: "Poppins", sans-serif; /*підключення шрифта (Poppins - сімейство шрифта, sans-serif - його тип)*/
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5; /*висота рядка (відношення висоти рядка до висоти шрифта)*/
-  margin: 0;
-}
+@import "./utils/variable";
+@import "./utils/base";
+@import "./utils/utils";
+@import "./components/buttons";
+@import "./components/links";
+@import "./components/header";
+@import "./components/hero-section";
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-top: 0;
-}
-
-a {
-  display: inline-block; /*всі посилання стають блоковими*/
-}
-
-address {
-  font-style: normal;
-}
-/*прибирає з усіх маркованих списків маркери*/
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
+@import "./utils/mixins";
 .section {
   padding: 48px 0;
 }
@@ -63,104 +14,9 @@ ul {
   width: 100%;
   max-width: 1240px; /*максимальна ширина*/
   margin: 0 auto;
-}
-/*Стилі для кнопок*/
-.button {
-  padding: 16px 32px;
-  /*фон*/
-  color: var(--color-primary-light);
-  font-weight: 600;
-  background-color: var(--color-brand-normal); /*зостосовуємо змінну*/
-  border: 2px solid var(--color-brand-normal);
-  border-radius: 8px;
-  /*змінна курсора*/
-  cursor: pointer;
-}
-/*кнопка робиться прозорою коли наводять мишку*/
-.button:hover {
-  color: var(--color-brand-dark);
-  background-color: transparent;
-}
-/*якщо в когось не працює кнопка, то можна перемикатись між кнопками то можна застосувати Tab і тоді кнопка на яку ми наводимось виділяється і її виділення можна змінити*/
-.button:focus {
-  background-color: hotpink;
-}
-/*зміна кольору коли натискаємо*/
-.button:active {
-  background-color: rgb(239, 110, 11);
-}
-.button[disabled] {
-  color: var(--color-brand-light);
-  background-color: lightgray;
-  border-color: currentColor;
-  cursor: not-allowed; /*змінює курсор на знак заборони*/
-}
-/*Стилі для посилання*/
-.link {
-  color: var(--color-primary-light);
-  text-decoration: none;
-  transition: color o.3s;
-}
-/*посилання робиться зеленим коли на нього наводиться курсор*/
-.link:hover {
-  color: var(--color-brand-normal);
-  font-weight: 600;
-}
-/*Стилі на головний напис*/
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 32px;
-}
-.header-container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.header-nav {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; /*Займає все вільне місце*/
-  gap: 40px;
-}
-.header-menu {
-  display: flex;
-  gap: 64px; /*додає відстань між елементами, так, що не потрібно додавати відстань вкінці*/
-  flex-grow: 1;
-  justify-content: center;
-}
-.hero-section {
-  padding: 272px 0;
-  background-image: linear-gradient(
-      102.76deg,
-      rgba(18, 18, 17, 0.78) 2.03%,
-      rgba(18, 18, 17, 0.6) 58.46%,
-      rgba(18, 18, 17, 0) 90.36%
-    ),
-    url("../images/hero-section-background.jpg"); /*задає фон (можна колір background-color, фото - background-image: url("../images/couple-in-bakery.jpg"))*/
-  background-repeat: no-repeat; /*щоб зображення не повторювалось*/
-  background-position: center; /*зміщення фону*/
-  background-size: cover;
-  background-attachment: fixed; /*фон буде залишатись при прокрутці*/
-}
-.hero-title {
-  margin-bottom: 0;
-  color: var(--color-primary-light);
-  text-decoration: underline; /*Підкреслення тексту*/
-  text-align: center; /*Вирівнювання тексту*/
-  text-shadow: 2px 2px 4px violet; /*робить тінь (зміщення по осі Х; зміщення по осі Y; розмитість; колір тіні)*/
-  /* letter-spacing: 4px;Відстань між літерами */
-  /* word-spacing: 4px;Відстань між словами */
-  font-size: 128px; /* розмір шрифта */
-  font-weight: 900; /*визначає товщину або насиченість шрифту, роблячи текст жирним або тонким */
-  font-style: italic; /* зробить текст курсивом */
+  padding: 0 24px;
 }
 
-.hero-title .accent {
-  color: var(--color-brand-normal);
-}
 /*Стилі для переваг*/
 .advantages-section {
   background-color: var(--color-brand-normal);
@@ -498,7 +354,7 @@ footer::after {
 .form-input:focus:placeholder {
   color: var(--color-primary-dark);
 }
-.form-button{
+.form-button {
   display: block;
   margin: 0 auto 24px;
 }
