@@ -90,18 +90,6 @@ ul {
   background-color: transparent;
 }
 
-/*Стилі для посилання*/
-.link {
-  color: var(--color-primary-light);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-/*посилання робиться зеленим коли на нього наводиться курсор*/
-.link:hover {
-  color: var(--color-brand-normal);
-}
-
 /*Стилі на головний напис*/
 .header {
   position: absolute;
@@ -156,6 +144,18 @@ ul {
   color: var(--color-brand-normal);
 }
 
+/*Стилі для посилання*/
+.link {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/*посилання робиться зеленим коли на нього наводиться курсор*/
+.link:hover {
+  color: var(--color-brand-normal);
+}
+
 .section {
   padding: 48px 0;
 }
@@ -169,8 +169,8 @@ ul {
 
 /*Стилі для переваг*/
 .advantages-section {
-  background-color: var(--color-brand-normal);
   padding: 16px 0;
+  background-color: var(--color-brand-normal);
 }
 
 .advantages-list {
@@ -291,9 +291,9 @@ ul {
   margin-bottom: 24px;
 }
 
-.chef-text p:not(:last-child) {
+.chef-text p:last-child {
   /*до всіх елементів крім останнього*/
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 /* формат секції */
@@ -314,16 +314,28 @@ ul {
 }
 
 .format-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 444px;
   padding: 24px;
   background-image: linear-gradient(180deg, rgba(49, 38, 26, 0) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%); /*додавання заднього фону*/
-  border: 1px solid lightgray;
   border-radius: 16px;
   transition: transform 0.3s;
 }
 
 .format-card:hover {
   transform: scale(1.1); /*трохи збільшує елемент, якщо на нього навести мишку*/
+}
+
+.format-image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .formats-title {
@@ -333,11 +345,13 @@ ul {
 .format-title {
   font-size: 24px;
   font-weight: 600;
+  color: var(--color-primary-light);
 }
 
 .format-text {
   font-size: 14px;
   font-weight: 300;
+  color: var(--color-primary-light);
 }
 
 /*Carousel*/
@@ -534,18 +548,8 @@ footer::after {
   border-color: lightgray;
 }
 
-.form-input:disabled::-moz-placeholder {
-  color: lightgray;
-}
-
 .form-input:disabled::placeholder {
   color: lightgray;
-}
-
-.form-input::-moz-placeholder {
-  color: var(--color-secondart-dark);
-  font-style: 16px;
-  line-height: 1.17;
 }
 
 .form-input::placeholder {
