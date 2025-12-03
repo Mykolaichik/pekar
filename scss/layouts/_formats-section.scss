@@ -1,0 +1,20 @@
+/* формат секції */
+.formats-section {
+  &__container {
+    display: flex;
+    align-items: center; /* вирівнює елемент по центру*/
+    gap: 32px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    flex-basis: calc(
+      (100% - 40px) / 3
+    ); /* щоб усі фігури були поділени на 3 рівні частини і відняти відступи (40 пікселів)*/
+  }
+}

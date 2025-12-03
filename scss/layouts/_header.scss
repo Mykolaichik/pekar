@@ -1,0 +1,26 @@
+/*Стилі на головний напис*/
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 32px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /*Займає все вільне місце*/
+    gap: 40px;
+  }
+  &__menu {
+    display: flex;
+    gap: 64px; /*додає відстань між елементами, так, що не потрібно додавати відстань вкінці*/
+    flex-grow: 1;
+    justify-content: center;
+  }
+}

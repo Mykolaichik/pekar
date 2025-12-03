@@ -1,0 +1,31 @@
+/* chef-section */
+.chefs-section {
+  &__title {
+    position: relative;
+    margin: 0 auto 80px;
+    &::before,
+    &::after {
+      /* псевдоелемент - використовується лише для декоративного оформлення/ за замовчуванням це рядок*/
+      position: absolute; /*якщо додаємо position: absolute то рядкові елементи стають блоковими*/
+      bottom: 24px;
+      width: 352px;
+      border: 2px solid var(--color-brand-light);
+      content: "";
+      /* обовязково потрібно, щоб робити псевдоелементи*/
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap; /*щоб елемент не розтягувався, а переносився на наступний рядок*/
+    gap: 40px 30px;
+  }
+  &__item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}

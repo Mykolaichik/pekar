@@ -1,16 +1,27 @@
-@import "./utils/variable";
+@import "./utils/variables";
 @import "./base";
+@import "./utils/texts";
 @import "./utils/utils";
+@import "./utils/mixins";
 
 @import "./components/buttons";
-@import "./components/header";
-@import "./components/hero-section";
+@import "./components/carousel-button";
+@import "./components/chef-card";
+@import "./components/format_card";
+@import "./components/input";
 @import "./components/links";
 
-@import "./utils/mixins";
-.section {
-  padding: 48px 0;
-}
+@import "./layouts/advantages-section";
+@import "./layouts/chefs-section";
+@import "./layouts/contact_section";
+@import "./layouts/formats-section";
+@import "./layouts/form-terms";
+@import "./layouts/header";
+@import "./layouts/hero-section";
+@import "./layouts/modal";
+@import "./layouts/section";
+@import "./layouts/traditions-section";
+
 .container {
   width: 100%;
   max-width: 1240px; /*максимальна ширина*/
@@ -18,209 +29,6 @@
   padding: 0 24px;
 }
 
-/*Стилі для переваг*/
-.advantages-section {
-  padding: 16px 0;
-  background-color: var(--color-brand-normal);
-}
-.advantages-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-}
-.advantages-item {
-  color: var(--color-primary-light);
-  font-size: 20px;
-  font-weight: 300;
-}
-/*Стилі для заголовків*/
-.section-title {
-  font-size: 64px;
-  font-weight: 900;
-  line-height: 1.3;
-}
-.section-title.centered {
-  text-align: center;
-}
-
-.section-title .accent {
-  color: var(--color-brand-dark);
-}
-.traditions-section {
-  padding-top: 96px;
-}
-.traditions-container {
-  display: flex; /*Розташовуємо в рядок*/
-  justify-content: space-between;
-  gap: 40px;
-}
-.traditions-content {
-  max-width: 710px;
-}
-.traditions-title {
-  margin-bottom: 42px;
-}
-/* traditions-text 
-.traditions-text {
-   white-space: nowrap;контролює як буде відображатись текст якщо він не вміщується в один рядок тут не переноситься
- } */
-
-.traditions-text .brand {
-  color: var(--color-brand-normal);
-  font-weight: 600;
-}
-.traditions-text .uppercase {
-  text-transform: uppercase; /* Виводить весь текс у верхній регістр */
-}
-.traditions-text.limited {
-  max-width: 340px;
-}
-/* chef-section */
-.chefs-title {
-  position: relative;
-  margin: 0 auto 80px;
-}
-.chefs-title::before,
-.chefs-title::after {
-  /* псевдоелемент - використовується лише для декоративного оформлення/ за замовчуванням це рядок*/
-  position: absolute; /*якщо додаємо position: absolute то рядкові елементи стають блоковими*/
-  bottom: 24px;
-  display: block;
-  width: 352px;
-  border: 2px solid var(--color-brand-light);
-  content: "";
-  /* обовязково потрібно, щоб робити псевдоелементи*/
-}
-.chefs-title::before {
-  left: 0;
-}
-.chefs-title::after {
-  right: 0;
-}
-.chefs-list {
-  display: flex;
-  flex-wrap: wrap; /*щоб елемент не розтягувався, а переносився на наступний рядок*/
-  gap: 40px 30px;
-}
-.chefs-item {
-  flex-basis: calc((100% - 30px) / 2);
-}
-.chef-card {
-  display: flex;
-  gap: 30px;
-}
-.chef-photo {
-  border-radius: 4px 4px 4px 200px; /*заокруглення фото*/
-  box-shadow: -16px 16px 0 0 var(--color-primary-light),
-    -16px 16px 0 2px var(--color-secondart-dark);
-}
-.chef-title {
-  margin-bottom: 16px;
-  font-size: 40px;
-  font-weight: 600;
-}
-.chef-text p {
-  margin-bottom: 24px;
-}
-.chef-text p:last-child {
-  /*до всіх елементів крім останнього*/
-  margin-bottom: 0;
-}
-/* формат секції */
-.formats-container {
-  display: flex;
-  align-items: center; /* вирівнює елемент по центру*/
-  gap: 32px;
-}
-.formats-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.formats-item {
-  flex-basis: calc(
-    (100% - 40px) / 3
-  ); /* щоб усі фігури були поділени на 3 рівні частини і відняти відступи (40 пікселів)*/
-}
-.format-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 444px;
-  padding: 24px;
-  background-image: linear-gradient(
-    180deg,
-    rgba(49, 38, 26, 0) 55.21%,
-    rgba(49, 38, 26, 0.71) 72.92%,
-    var(--color-primary-dark) 100%
-  ); /*додавання заднього фону*/
-  border-radius: 16px;
-  transition: transform 0.3s;
-}
-.format-card:hover {
-  transform: scale(1.1); /*трохи збільшує елемент, якщо на нього навести мишку*/
-}
-.format-image {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.formats-title {
-  margin-bottom: 80px;
-}
-.format-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-primary-light);
-}
-.format-text {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--color-primary-light);
-}
-/*Carousel*/
-.carousel-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /*елемент стає нестискаємим*/
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  fill: var(--color-primary-dark);
-  background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid var(--color-primary-dark);
-  cursor: pointer;
-}
-
-.carousel-button:hover {
-  background-color: var(--color-primary-dark);
-  fill: var(--color-primary-light);
-}
-.carousel-button.next {
-  transform: rotate(180deg);
-}
-/* Contact section */
-.contact-section {
-  padding-bottom: 96px;
-}
-.contact-container {
-  display: flex;
-  gap: 32px;
-}
-.contact-title {
-  margin-bottom: 16px;
-}
-.contact-map {
-  flex-shrink: 0;
-  border-radius: 16px;
-  border: none;
-}
 /* Footer */
 .footer {
   padding: 32px 0;
@@ -292,98 +100,7 @@ footer::after {
 .address-copyright {
   font-size: 14px;
 }
-/* Modal */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 1.3s, visibility 1.3s; /* плавно з'являється і зникає вікно, не всі властивості є анімованими */
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-.modal {
-  position: relative;
-  width: 100%;
-  max-width: 880px;
-  height: 100%;
-  max-height: 880px;
-  padding: 128px;
-  background-color: var(--color-primary-light);
-  border-radius: 32px;
-  overflow-y: auto;
-}
 
-.modal-btn-close {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-}
-/* form */
-.form-field {
-  position: relative;
-  margin-bottom: 32px;
-}
-.form-label {
-  position: absolute;
-  top: 16px;
-  left: 42px;
-}
-
-.form-input {
-  padding: 16px 42px;
-  width: 100%;
-  font-style: 16px;
-  line-height: 1.17;
-  border: 1px solid var(--color-secondart-dark);
-  border-radius: 8px;
-  background-color: transparent;
-}
-
-.form-input:focus {
-  border-color: var(--color-brand-normal);
-  outline: none;
-}
-.form-input:disabled {
-  border-color: lightgray;
-}
-.form-input:disabled::placeholder {
-  color: lightgray;
-}
-
-.form-input::placeholder {
-  color: var(--color-secondart-dark);
-  font-style: 16px;
-  line-height: 1.17;
-}
-.form-input:focus:placeholder {
-  color: var(--color-primary-dark);
-}
-.form-button {
-  display: block;
-  margin: 0 auto 24px;
-}
-.form-terms {
-  margin: 0 auto;
-  max-width: 220px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.5;
-  text-align: center;
-}
-.form-terms-link {
-  color: var(--color-primary-dark);
-  text-underline-offset: 2px;
-}
 /* .checkbox{
   position: relative;
 }
