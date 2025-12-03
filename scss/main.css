@@ -208,6 +208,11 @@ ul {
   border-color: var(--color-brand-normal);
   outline: none;
 }
+.input__control::-moz-placeholder {
+  color: var(--color-secondart-dark);
+  font-size: 16px;
+  line-height: 1.17;
+}
 .input__control::placeholder {
   color: var(--color-secondart-dark);
   font-size: 16px;
@@ -290,7 +295,7 @@ ul {
 }
 .contact-section__button {
   display: block;
-  margin: 0 auto 24px;
+  margin: 0 auto 16px;
 }
 .contact-section__map {
   flex-shrink: 0;
@@ -405,11 +410,17 @@ ul {
   border-radius: 32px;
   overflow-y: auto;
 }
-
-.modal-btn-close {
+.modal__btn-close {
   position: absolute;
   top: 40px;
   right: 40px;
+}
+.modal__form-field {
+  margin-bottom: 32px;
+}
+.modal__button {
+  display: block;
+  margin: 0 auto 24px;
 }
 
 /*Стилі для заголовків*/
